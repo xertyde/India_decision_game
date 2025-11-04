@@ -1,6 +1,41 @@
 // Game state
 let currentSceneId = 'start';
 
+// Progress mapping for each scene (percentage of game completion)
+const sceneProgress = {
+    'start': 0,
+    'public_transport_choice': 15,
+    'street_food_detour': 15,
+    'tuk_tuk': 25,
+    'cab': 25,
+    'bus': 25,
+    'feet_food': 25,
+    'instant_noodles': 25,
+    'get_to_office_at_9am': 45,
+    'get_to_office_at_past_9am': 45,
+    'go_to_other_building': 50,
+    'conversation_stranger': 50,
+    'bow_90_degrees': 55,
+    'greet_with_a_handshake': 55,
+    'say_namaste': 55,
+    'give_him_a_hug': 55,
+    'correct_him': 65,
+    'laugh_at_him': 65,
+    'ignore_it': 65,
+    'hired': 75,
+    'accept_the_dish': 85,
+    'ask_teams_group_chat': 90,
+    'ask_whatsapp_group_chat': 100,
+    'bad_end_1': 100,
+    'bad_end_2': 100,
+    'bad_end_3': 100,
+    'bad_end_4': 100,
+    'bad_end_5': 100,
+    'bad_end_6': 100,
+    'bad_end_7': 100,
+    'bad_end_8': 100
+};
+
 // Story scenes data
 const scenes = {
     start: {
@@ -303,9 +338,22 @@ const scenes = {
     }
 };
 
+// Update progress bar
+function updateProgress(sceneId) {
+    const progress = sceneProgress[sceneId] || 0;
+    const progressBar = document.getElementById('progress-bar');
+    const progressPercentage = document.getElementById('progress-percentage');
+    
+    if (progressBar && progressPercentage) {
+        progressBar.style.width = progress + '%';
+        progressPercentage.textContent = progress + '%';
+    }
+}
+
 // Initialize game
 function initGame() {
     currentSceneId = 'start';
+    updateProgress(currentSceneId);
     displayScene(currentSceneId);
 }
 
@@ -320,6 +368,9 @@ function displayScene(sceneId) {
     
     // Scroll to top smoothly for better mobile UX
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Update progress bar
+    updateProgress(sceneId);
     
     // Update title
     document.getElementById('scene-title').textContent = scene.title;
