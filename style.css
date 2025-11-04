@@ -111,12 +111,42 @@ body {
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
     text-align: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.choice-button-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.choice-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.choice-text {
+    flex: 1;
 }
 
 .choice-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
     background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.choice-button:hover .choice-image {
+    transform: scale(1.15);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .choice-button:active {
@@ -192,6 +222,11 @@ body {
     .choice-button {
         padding: 15px 20px;
         font-size: 1em;
+    }
+    
+    .choice-image {
+        width: 60px;
+        height: 60px;
     }
 }
 

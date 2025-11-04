@@ -102,6 +102,34 @@ const scenes = {
             { text: "Give him a hug", next: "give_him_a_hug" }
         ],
     },
+    go_to_other_building: {
+        id: "go_to_other_building",
+        title: "Go to the other building",
+        text: "You go to the other building. It's actually a Bollywood studio. You sit and watch some scene from the next indian blockbuster movie. Twenty minutes later, you are called by your interviewer. You return to the previous building.",
+        image: "images/go_to_other_building.jpg",
+        choices: [
+            { text: "Return to the previous building", next: "get_to_office_at_past_9am" }
+        ],
+    },
+    conversation_stranger: {
+        id: "conversation_stranger",
+        title: "Conversation with a stranger",
+        text: "You start a conversation with a stranger in the office. Congratulations ! You got a new friend, his name is Aditya. You ask him where is the office you are looking for, and where is your interviewer desk. He takes your hand and leads you to th right place.",
+        image: "images/conversation_stranger.jpg",
+        choices: [
+            { text: "Make an homophobic joke", next: "homophobic_joke" },
+            { text: "Thank him", next: "get_to_office_at_past_9am" },
+        ],
+    },
+    homophobic_joke: {
+        id: "homophobic_joke",
+        title: "Homophobic joke",
+        text: "You make an homophobic joke. Aditya is offended by your joke. He asks you to leave the office.",
+        image: "images/homophobic_joke.jpg",
+        choices: [
+            { text: "Leave the office", next: "bad_end_5" }
+        ],
+    },
     bow_90_degrees: {
         id: "bow_90_degrees",
         title: "Bow at 90° angle",
@@ -116,16 +144,89 @@ const scenes = {
     greet_with_a_handshake: {
         id: "greet_with_a_handshake",
         title: "Greet him with a handshake",
-        text: "You greet him with a handshake. Your interviewer is impressed by your polite behaviour. He asks you to sit down and you start the interview.",
+        text: "You greet him with a handshake. Your interviewer is impressed by your polite behaviour. He asks you to sit down and you start the interview. He makes a mistake saying your name.",
         image: "images/greet_with_a_handshake.jpg",
-        choices: []
+        choices: [
+            { text: "Correct him", next: "correct_him" },
+            { text: "Laugh at him", next: "laugh_at_him" },
+            { text: "Ignore It", next: "ignore_it" }
+        ]
     },
     say_namaste: {
         id: "say_namaste",
         title: "Say namaste",
-        text: "You say namaste. Your interviewer is impressed by your polite behaviour. He asks you to sit down and you start the interview.",
+        text: "You say namaste. Your interviewer is impressed by your polite behaviour. He asks you to sit down and you start the interview. He makes a mistake saying your name.",
         image: "images/say_namaste.jpg",
-        choices: []
+        choices: [
+            { text: "Correct him", next: "correct_him" },
+            { text: "Laugh at him", next: "laugh_at_him" },
+            { text: "Ignore It", next: "ignore_it" }
+        ]
+    },
+    correct_him: {
+        id: "correct_him",
+        title: "Correct him",
+        text: "You correct him. He is the boss. I decides to end the interview right away.",
+        image: "images/correct_him.jpg",
+        choices: [
+            { text: "You are thrown out of the office", next: "bad_end_6" }
+        ]
+    },
+    laugh_at_him: {
+        id: "correct_him",
+        title: "Correct him",
+        text: "You correct him. He is the boss. He decides to end the interview right away.",
+        image: "images/correct_him.jpg",
+        choices: [
+            { text: "You are thrown out of the office", next: "bad_end_6" }
+        ] 
+    },
+    ignore_it: {
+        id: "ignore_it",
+        title: "Ignore It",
+        text: "You ignore it. Good idea, because he is the boss. He asks for your CV.",
+        image: "images/ignore_it.jpg",
+        choices: [
+            { text: "CV 1", next: "bad_end_7", image: "images/cv_1.jpg" },
+            { text: "CV 2", next: "hired", image: "images/cv_2.jpg" }
+        ]
+    },
+    hired: {
+        id: "hired",
+        title: "You are hired",
+        text: "Congratulations ! You are hired. You start your internship right now. A kind coworker offers you a traditional dish that se cooked: chicken curry, but you are vegan.",
+        image: "images/hired.jpg",
+        choices: [
+            { text: "Refuse the dish", next: "bad_end_8" },
+            { text: "Accept the dish", next: "accept_the_dish" }
+        ]
+    },
+    accept_the_dish: {
+        id: "accept_the_dish",
+        title: "Accept the dish",
+        text: "You accept the dish. It's delicious. You have a new friend ! You ask her the link for the company's group chat.",
+        image: "images/accept_the_dish.jpg",
+        choices: [
+            { text: "Ask for the Teams group chat", next: "ask_teams_group_chat" },
+            { text: "Ask for the Whatsapp group chat", next: "ask_whatsapp_group_chat" }
+        ]
+    },
+    ask_teams_group_chat: {
+        id: "ask_teams_group_chat",
+        title: "Ask for the Teams group chat",
+        text: "You ask for the Teams group chat. Your friend tells you that in India, they usually use Whatsapp for group chats.",
+        image: "images/ask_teams_group_chat.jpg",
+        choices: [
+            { text: "Ask for the Whatsapp group chat", next: "ask_whatsapp_group_chat" }
+        ]
+    },
+    ask_whatsapp_group_chat: {
+        id: "ask_whatsapp_group_chat",
+        title: "Ask for the Whatsapp group chat",
+        text: "You ask for the Whatsapp group chat. You join the group chat. You start to work. Congratulations ! You got your internship without being fired!",
+        image: "images/ask_whatsapp_group_chat.jpg",
+        choices: [],
+        ending: "good"
     },
     give_him_a_hug: {
         id: "give_him_a_hug",
@@ -139,7 +240,7 @@ const scenes = {
     bad_end_1: {
         id: "bad_end_1",
         title: "You are dead",
-        text: "You are dead. You are buried in the mud. You are dead. You are buried in the mud. You are dead. You are buried in the mud. You are dead. You are buried in the mud. You are dead. You are buried in the mud. You are dead. You are buried in the mud.",
+        text: "You are dead. You are buried in the mud. You wont abviously attend to your interview. You are not hired.",
         image: "images/bad_end_1.jpg",
         choices: [],
         ending: "bad"
@@ -147,7 +248,7 @@ const scenes = {
     bad_end_2: {
         id: "bad_end_2",
         title: "You are broke",
-        text: "You are broke. You are broke. You are broke. You are broke. You are broke. You are broke. You are broke. You are broke. You are broke. You are broke. You are broke. You are broke.",
+        text: "You are broke. You wont abviously attend to your interview. You are not hired.",
         image: "images/bad_end_2.jpg",
         choices: [],
         ending: "bad"
@@ -155,7 +256,7 @@ const scenes = {
     bad_end_3: {
         id: "bad_end_3",
         title: "You are turista",
-        text: "You have turista. You have turista. You have turista. You have turista. You have turista. You have turista. You have turista. You have turista. You have turista. You have turista. You have turista.",
+        text: "You have turista. You wont abviously attend to your interview. You are not hired.",
         image: "images/bad_end_3.jpg",
         choices: [],
         ending: "bad"
@@ -163,8 +264,40 @@ const scenes = {
     bad_end_4: {
         id: "bad_end_4",
         title: "You are thrown out of the office",
-        text: "You are thrown out of the office. You are thrown out of the office. You are thrown out of the office. You are thrown out of the office. You are thrown out of the office. You are thrown out of the office. You are thrown out of the office. You are thrown out of the office. You are thrown out of the office. You are thrown out of the office. You are thrown out of the office.",
+        text: "You are thrown out of the office. You are not hired.",
         image: "images/bad_end_4.jpg",
+        choices: [],
+        ending: "bad"
+    },
+    bad_end_5: {
+        id: "bad_end_5",
+        title: "You are thrown out of the office because of your homophobic joke",
+        text: "In India, Indian often take there friends' hand. You are not hired",
+        image: "images/bad_end_5.jpg",
+        choices: [],
+        ending: "bad"
+    },
+    bad_end_6: {
+        id: "bad_end_6",
+        title: "You are thrown out of the office because you mention his fault",
+        text: "In indian companies, the boss is always right. You are not hired.",
+        image: "images/bad_end_6.jpg",
+        choices: [],
+        ending: "bad"
+    },
+    bad_end_7: {
+        id: "bad_end_7",
+        title: "You are not hired",
+        text: "You are not hired because your CV isn't India friendly.",
+        image: "images/bad_end_7.jpg",
+        choices: [],
+        ending: "bad"
+    },
+    bad_end_8: {
+        id: "bad_end_8",
+        title: "You are fired",
+        text: "It is really impolite to refuse a coworker's gift. You are fired.",
+        image: "images/bad_end_8.jpg",
         choices: [],
         ending: "bad"
     }
@@ -233,7 +366,28 @@ function displayScene(sceneId) {
         scene.choices.forEach((choice, index) => {
             const button = document.createElement('button');
             button.className = 'choice-button';
-            button.textContent = choice.text;
+            
+            // Create button content container
+            const buttonContent = document.createElement('div');
+            buttonContent.className = 'choice-button-content';
+            
+            // Add image if it exists
+            if (choice.image && choice.image !== "") {
+                const choiceImage = document.createElement('img');
+                choiceImage.src = choice.image;
+                choiceImage.alt = choice.text;
+                choiceImage.className = 'choice-image';
+                buttonContent.appendChild(choiceImage);
+            }
+            
+            // Add text
+            const buttonText = document.createElement('span');
+            buttonText.className = 'choice-text';
+            buttonText.textContent = choice.text;
+            buttonContent.appendChild(buttonText);
+            
+            button.appendChild(buttonContent);
+            
             button.onclick = () => {
                 currentSceneId = choice.next;
                 displayScene(choice.next);
