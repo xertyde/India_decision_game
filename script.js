@@ -318,6 +318,9 @@ function displayScene(sceneId) {
         return;
     }
     
+    // Scroll to top smoothly for better mobile UX
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
     // Update title
     document.getElementById('scene-title').textContent = scene.title;
     
