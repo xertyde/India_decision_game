@@ -100,7 +100,7 @@ const scenes = {
         id: "feet_food",
         title: "Cultural Experience",
         text: "You quickly grab a samosa from a street vendor cooked with his feet and fried with diesel. It's horrible but you are hungry. Really bad idea, you get turista",
-        image: "images/quick_food.jpg",
+        image: "images/feet_food.jpg",
         choices: [
             { text: "Shit your pants", next: "bad_end_3" }
         ]
@@ -109,7 +109,7 @@ const scenes = {
         id: "instant_noodles",
         title: "Quick stop",
         text: "You decide to sit down and enjoy a proper breakfast. The food is amazing - dosas, idlis, and spicy chutneys. You're thoroughly enjoying the experience, but when you check the time, you realize you might be running late!",
-        image: "images/slow_food.jpg",
+        image: "images/instant_noodles.jpg",
         choices: [
             { text: "Rush to the bus station", next: "bus" },
             { text: "Take a cab because you are already late", next: "get_to_office_at_past_9am" }
@@ -345,8 +345,26 @@ function updateProgress(sceneId) {
     const progressPercentage = document.getElementById('progress-percentage');
     
     if (progressBar && progressPercentage) {
+        // Animate progress bar
         progressBar.style.width = progress + '%';
         progressPercentage.textContent = progress + '%';
+        
+        // Update milestones
+        const milestones = document.querySelectorAll('.milestone');
+        milestones.forEach((milestone, index) => {
+            const milestoneValue = index * 25; // 0%, 25%, 50%, 75%, 100%
+            if (progress >= milestoneValue) {
+                milestone.classList.add('active');
+            } else {
+                milestone.classList.remove('active');
+            }
+        });
+        
+        // Add a subtle animation effect when progress increases
+        progressBar.style.animation = 'none';
+        setTimeout(() => {
+            progressBar.style.animation = '';
+        }, 10);
     }
 }
 
