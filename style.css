@@ -274,8 +274,8 @@ body {
     margin-bottom: 24px;
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: var(--shadow-md);
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    box-shadow: none;
+    background: transparent;
     min-height: 200px;
     display: flex;
     align-items: center;
@@ -284,11 +284,7 @@ body {
 }
 
 .image-area::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-    pointer-events: none;
+    display: none;
 }
 
 .image-area img {
@@ -478,6 +474,60 @@ body {
     color: var(--text-dark);
 }
 
+/* PDF display styles for CV selection scene */
+.pdfs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.pdf-wrapper {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-light);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow-md);
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    transition: var(--transition);
+}
+
+.pdf-wrapper:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.pdf-title {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    text-align: center;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 600px;
+    min-height: 500px;
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    background: white;
+    margin-bottom: 16px;
+}
+
+.pdf-choice-button {
+    width: 100%;
+    margin-top: auto;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    padding: 16px 24px;
+    min-height: 56px;
+}
+
 /* Mobile-first responsive design */
 @media (max-width: 768px) {
     body {
@@ -599,6 +649,25 @@ body {
         font-size: 1.1rem;
         border-radius: 12px;
     }
+    
+    .pdfs-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .pdf-wrapper {
+        padding: 16px;
+    }
+    
+    .pdf-title {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .pdf-viewer {
+        height: 500px;
+        min-height: 400px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -695,6 +764,24 @@ body {
     .end-message {
         padding: 18px;
         font-size: 1rem;
+    }
+    
+    .pdfs-container {
+        gap: 16px;
+    }
+    
+    .pdf-wrapper {
+        padding: 14px;
+    }
+    
+    .pdf-title {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .pdf-viewer {
+        height: 400px;
+        min-height: 350px;
     }
 }
 

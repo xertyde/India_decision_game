@@ -42,7 +42,7 @@ const scenes = {
         id: "interview_morning",
         title: "The Interview Day",
         text: "It's your first day in India. Your goal is to get an internship in a Call Center in Bangalore. You have an interview planned at 9am. You have just woken up and It's 8am, you have more or less 1 hour of public transport to get there.",
-        image: "images/interview_morning.jpg",
+        image: "images/start.jpg",
         choices: [
             { text: "You take public transport right away.", next: "public_transport_choice" },
             { text: "You take a detour to a street food avenue to eat something because you are dying from hunger.", next: "street_food_detour" }
@@ -52,7 +52,7 @@ const scenes = {
         id: "public_transport_choice",
         title: "Choosing Your Transport",
         text: "You rush out of your accommodation and head to the nearest transport hub. The streets are already bustling with morning traffic. You need to choose your mode of transportation carefully - time is of the essence!",
-        image: "images/public_transport.jpg",
+        image: "images/public_transport.jpeg",
         choices: [
             { text: "Take a tuk-tuk", next: "tuk_tuk" },
             { text: "Take a cab", next: "cab" },
@@ -73,7 +73,7 @@ const scenes = {
         id: "tuk_tuk",
         title: "Tuk-Tuk Adventure",
         text: "You flag down a colorful tuk-tuk. The driver negotiates the price with enthusiasm. As you zip through Bangalore's busy streets, you realize this might be faster than expected, but also more unpredictable. You get in car accident and there was no seatbelt on board. You are dead.",
-        image: "images/tuk_tuk.jpg",
+        image: "images/tuk_tuk.png",
         choices: [
             { text: "Get buried in the mud", next: "bad_end_1" }
         ]
@@ -119,7 +119,7 @@ const scenes = {
         id: "get_to_office_at_9am",
         title: "It's 9am and you arrive at the office",
         text: "You arrive at the office at 9am. You are on time. You are punctual. You are a good employee. You are a good person. But the office is almost empty.",
-        image: "images/get_to_office_at_9am.jpg",
+        image: "images/get_to_office_at_9am.jpeg",
         choices: [
             { text: "You decide to try the next building in the boulevard. You might have chosen the wrong address", next: "go_to_other_building" },
             { text: "Start a conversation with a stranger in the office", next: "conversation_stranger" }
@@ -129,7 +129,7 @@ const scenes = {
         id: "get_to_office_at_past_9am",
         title: "It's past 9am and you arrive at the office.",
         text: "Don't worry, you are not the only one late. In India, when you say 9am, it can actually mean 9:30am or 10am. You run by your interviewer, you approach him in order to greet him.",
-        image: "images/get_to_office_at_past_9am.jpg",
+        image: "images/get_to_office_at_9am.jpeg",
         choices: [
             { text: "Bow at 90° angle", next: "bow_90_degrees" },
             { text: "Greet him with a handshake", next: "greet_with_a_handshake" },
@@ -160,7 +160,7 @@ const scenes = {
         id: "homophobic_joke",
         title: "Homophobic joke",
         text: "You make an homophobic joke. Aditya is offended by your joke. He asks you to leave the office.",
-        image: "images/homophobic_joke.jpg",
+        image: "images/homophobic_joke.jpeg",
         choices: [
             { text: "Leave the office", next: "bad_end_5" }
         ],
@@ -169,7 +169,7 @@ const scenes = {
         id: "bow_90_degrees",
         title: "Bow at 90° angle",
         text: "You bow at 90° angle. Your interviewer is disturbed by your racist behaviour. We are in India, not Japan.",
-        image: "images/bow_90_degrees.jpg",
+        image: "images/bow_90_degrees.jpeg",
         choices: [
             { text: "Apologize and greet him with a handshake", next: "greet_with_a_handshake" },
             { text: "Apologize and say namaste", next: "say_namaste" },
@@ -180,7 +180,7 @@ const scenes = {
         id: "greet_with_a_handshake",
         title: "Greet him with a handshake",
         text: "You greet him with a handshake. Your interviewer is impressed by your polite behaviour. He asks you to sit down and you start the interview. He makes a mistake saying your name.",
-        image: "images/greet_with_a_handshake.jpg",
+        image: "images/greet_with_a_handshake.jpeg",
         choices: [
             { text: "Correct him", next: "correct_him" },
             { text: "Laugh at him", next: "laugh_at_him" },
@@ -211,7 +211,7 @@ const scenes = {
         id: "correct_him",
         title: "Correct him",
         text: "You correct him. He is the boss. He decides to end the interview right away.",
-        image: "images/correct_him.jpg",
+        image: "images/homophobic_joke.jpg",
         choices: [
             { text: "You are thrown out of the office", next: "bad_end_6" }
         ] 
@@ -220,17 +220,18 @@ const scenes = {
         id: "ignore_it",
         title: "Ignore It",
         text: "You ignore it. Good idea, because he is the boss. He asks for your CV.",
-        image: "images/ignore_it.jpg",
+        image: "images/ignore_it.jpeg",
         choices: [
-            { text: "CV 1", next: "bad_end_7", image: "images/cv_1.jpg" },
-            { text: "CV 2", next: "hired", image: "images/cv_2.jpg" }
-        ]
+            { text: "CV 1", next: "bad_end_7", pdf: "images/CV_1.pdf" },
+            { text: "CV 2", next: "hired", pdf: "images/CV_2.pdf" }
+        ],
+        showPdfs: true
     },
     hired: {
         id: "hired",
         title: "You are hired",
         text: "Congratulations ! You are hired. You start your internship right now. A kind coworker offers you a traditional dish that se cooked: chicken curry, but you are vegan.",
-        image: "images/hired.jpg",
+        image: "images/curry.jpg",
         choices: [
             { text: "Refuse the dish", next: "bad_end_8" },
             { text: "Accept the dish", next: "accept_the_dish" }
@@ -240,7 +241,7 @@ const scenes = {
         id: "accept_the_dish",
         title: "Accept the dish",
         text: "You accept the dish. It's delicious. You have a new friend ! You ask her the link for the company's group chat.",
-        image: "images/accept_the_dish.jpg",
+        image: "images/accept_the_dish.jpeg",
         choices: [
             { text: "Ask for the Teams group chat", next: "ask_teams_group_chat" },
             { text: "Ask for the Whatsapp group chat", next: "ask_whatsapp_group_chat" }
@@ -250,7 +251,7 @@ const scenes = {
         id: "ask_teams_group_chat",
         title: "Ask for the Teams group chat",
         text: "You ask for the Teams group chat. Your friend tells you that in India, they usually use Whatsapp for group chats.",
-        image: "images/ask_teams_group_chat.jpg",
+        image: "images/ask_teams_group_chat.png",
         choices: [
             { text: "Ask for the Whatsapp group chat", next: "ask_whatsapp_group_chat" }
         ]
@@ -259,7 +260,7 @@ const scenes = {
         id: "ask_whatsapp_group_chat",
         title: "Ask for the Whatsapp group chat",
         text: "You ask for the Whatsapp group chat. You join the group chat. You start to work. Congratulations ! You got your internship without being fired!",
-        image: "images/ask_whatsapp_group_chat.jpg",
+        image: "images/hired.jpeg",
         choices: [],
         ending: "good"
     },
@@ -267,7 +268,7 @@ const scenes = {
         id: "give_him_a_hug",
         title: "Give him a hug",
         text: "You give him a hug. Your interviewer is disgusted by your behaviour. He asks you to leave the office.",
-        image: "images/give_him_a_hug.jpg",
+        image: "images/homophobic_joke.jpg",
         choices: [
             { text: "Leave the office", next: "bad_end_4" }
         ]
@@ -276,7 +277,7 @@ const scenes = {
         id: "bad_end_1",
         title: "You are dead",
         text: "You are dead. You are buried in the mud. You wont abviously attend to your interview. You are not hired.",
-        image: "images/bad_end_1.jpg",
+        image: "images/bad_end_1.jpeg",
         choices: [],
         ending: "bad"
     },
@@ -284,15 +285,15 @@ const scenes = {
         id: "bad_end_2",
         title: "You are broke",
         text: "You are broke. You wont abviously attend to your interview. You are not hired.",
-        image: "images/bad_end_2.jpg",
+        image: "images/bad_end_2.jpeg",
         choices: [],
         ending: "bad"
     },
     bad_end_3: {
         id: "bad_end_3",
-        title: "You are turista",
+        title: "You have turista",
         text: "You have turista. You wont abviously attend to your interview. You are not hired.",
-        image: "images/bad_end_3.jpg",
+        image: "images/bad_end_3.gif",
         choices: [],
         ending: "bad"
     },
@@ -300,7 +301,7 @@ const scenes = {
         id: "bad_end_4",
         title: "You are thrown out of the office",
         text: "You are thrown out of the office. You are not hired.",
-        image: "images/bad_end_4.jpg",
+        image: "images/bad_end_4.jpeg",
         choices: [],
         ending: "bad"
     },
@@ -308,7 +309,7 @@ const scenes = {
         id: "bad_end_5",
         title: "You are thrown out of the office because of your homophobic joke",
         text: "In India, Indian often take there friends' hand. You are not hired",
-        image: "images/bad_end_5.jpg",
+        image: "images/bad_end_5.jpeg",
         choices: [],
         ending: "bad"
     },
@@ -324,7 +325,7 @@ const scenes = {
         id: "bad_end_7",
         title: "You are not hired",
         text: "You are not hired because your CV isn't India friendly.",
-        image: "images/bad_end_7.jpg",
+        image: "images/bad_end_7.jpeg",
         choices: [],
         ending: "bad"
     },
@@ -332,7 +333,7 @@ const scenes = {
         id: "bad_end_8",
         title: "You are fired",
         text: "It is really impolite to refuse a coworker's gift. You are fired.",
-        image: "images/bad_end_8.jpg",
+        image: "images/bad_end_8.jpeg",
         choices: [],
         ending: "bad"
     }
@@ -433,6 +434,40 @@ function displayScene(sceneId) {
         restartButton.textContent = '🔄 Restart Game';
         restartButton.onclick = initGame;
         choicesArea.appendChild(restartButton);
+    } else if (scene.showPdfs) {
+        // Special handling for CV selection scene - display PDFs in large format
+        const pdfsContainer = document.createElement('div');
+        pdfsContainer.className = 'pdfs-container';
+        
+        scene.choices.forEach((choice, index) => {
+            const pdfWrapper = document.createElement('div');
+            pdfWrapper.className = 'pdf-wrapper';
+            
+            const pdfTitle = document.createElement('h3');
+            pdfTitle.className = 'pdf-title';
+            pdfTitle.textContent = choice.text;
+            pdfWrapper.appendChild(pdfTitle);
+            
+            const pdfViewer = document.createElement('iframe');
+            pdfViewer.src = choice.pdf;
+            pdfViewer.className = 'pdf-viewer';
+            pdfViewer.setAttribute('type', 'application/pdf');
+            pdfViewer.setAttribute('allowfullscreen', 'true');
+            pdfWrapper.appendChild(pdfViewer);
+            
+            const pdfButton = document.createElement('button');
+            pdfButton.className = 'choice-button pdf-choice-button';
+            pdfButton.textContent = `Choisir ${choice.text}`;
+            pdfButton.onclick = () => {
+                currentSceneId = choice.next;
+                displayScene(choice.next);
+            };
+            pdfWrapper.appendChild(pdfButton);
+            
+            pdfsContainer.appendChild(pdfWrapper);
+        });
+        
+        choicesArea.appendChild(pdfsContainer);
     } else {
         // Display choice buttons
         scene.choices.forEach((choice, index) => {
