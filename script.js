@@ -385,8 +385,8 @@ function displayScene(sceneId) {
         return;
     }
     
-    // Scroll to top smoothly for better mobile UX
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Ensure we're at the top (no scrolling needed as layout fits on screen)
+    window.scrollTo({ top: 0, behavior: 'auto' });
     
     // Update progress bar
     updateProgress(sceneId);
