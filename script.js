@@ -457,7 +457,7 @@ function displayScene(sceneId) {
             
             const pdfButton = document.createElement('button');
             pdfButton.className = 'choice-button pdf-choice-button';
-            pdfButton.textContent = `Choisir ${choice.text}`;
+            pdfButton.textContent = `Choose ${choice.text}`;
             pdfButton.onclick = () => {
                 currentSceneId = choice.next;
                 displayScene(choice.next);
