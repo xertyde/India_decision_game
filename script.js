@@ -276,7 +276,7 @@ const scenes = {
     bad_end_1: {
         id: "bad_end_1",
         title: "You are dead",
-        text: "You are dead. You are buried in the mud. You wont abviously attend to your interview. You are not hired.",
+        text: "You are dead. You are buried in the mud. You wont obviously attend to your interview. You are not hired.",
         image: "images/bad_end_1.jpeg",
         choices: [],
         ending: "bad"
@@ -284,7 +284,7 @@ const scenes = {
     bad_end_2: {
         id: "bad_end_2",
         title: "You are broke",
-        text: "You are broke. You wont abviously attend to your interview. You are not hired.",
+        text: "You are broke. You wont obviously attend to your interview. You are not hired.",
         image: "images/bad_end_2.jpeg",
         choices: [],
         ending: "bad"
@@ -292,7 +292,7 @@ const scenes = {
     bad_end_3: {
         id: "bad_end_3",
         title: "You have turista",
-        text: "You have turista. You wont abviously attend to your interview. You are not hired.",
+        text: "You have turista. You wont obviously attend to your interview. You are not hired.",
         image: "images/bad_end_3.gif",
         choices: [],
         ending: "bad"
