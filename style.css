@@ -797,6 +797,35 @@ body {
         width: 4px;
         height: 4px;
     }
+
+}
+
+/* Snapchat-themed button styles */
+.choice-button.snapchat {
+    background: linear-gradient(135deg, #FFFC00 0%, #FFEA00 100%);
+    color: #111;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 8px 24px rgba(255, 230, 0, 0.18);
+}
+
+.choice-button.snapchat .choice-text {
+    font-weight: 800;
+}
+
+.choice-button.snapchat::after {
+    content: "👻";
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    z-index: 1;
+}
+
+/* Small adjustment when an image exists inside a snapchat button */
+.choice-button.snapchat .choice-image {
+    border: 2px solid rgba(0,0,0,0.06);
+}
     
     .game-container {
         padding: 12px;
@@ -869,7 +898,6 @@ body {
         height: 300px;
         min-height: 250px;
     }
-}
 
 /* Landscape mobile optimization */
 @media (max-width: 768px) and (orientation: landscape) {

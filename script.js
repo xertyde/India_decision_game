@@ -25,6 +25,7 @@ const sceneProgress = {
     'hired': 75,
     'accept_the_dish': 85,
     'ask_teams_group_chat': 90,
+    'ask_snapchat_group_chat': 95,
     'ask_whatsapp_group_chat': 100,
     'bad_end_1': 100,
     'bad_end_2': 100,
@@ -219,7 +220,7 @@ const scenes = {
     ignore_it: {
         id: "ignore_it",
         title: "Ignore It",
-        text: "You ignore it. Good idea, because he is the boss. He asks for your CV.",
+        text: "You ignore it. Good idea, because he is the boss. He asks for your CV.\nInclude personal details such as full name, phone number, email, and often city/state (postal address optional).\n\nAdd a short professional summary at the top highlighting skills and career goals.\n\nMention technical skills clearly, especially IT tools, software, or domain-specific expertise.\n\nDetail academic qualifications with percentages/GPAs, universities, and years of completion.\n\nList projects and internships, as they are highly valued, especially for fresh graduates.\n\nInclude certifications, online courses, and relevant training programs.\n\nAdd extracurricular activities or achievements if they strengthen the profile.\n\nKeep the format clean and structured, usually 1–2 pages depending on experience.",
         image: "images/ignore_it.jpeg",
         choices: [
             { text: "CV 1", next: "bad_end_7", pdf: "images/CV_1.pdf" },
@@ -244,7 +245,18 @@ const scenes = {
         image: "images/accept_the_dish.jpeg",
         choices: [
             { text: "Ask for the Teams group chat", next: "ask_teams_group_chat" },
-            { text: "Ask for the Whatsapp group chat", next: "ask_whatsapp_group_chat" }
+            { text: "Ask for the Whatsapp group chat", next: "ask_whatsapp_group_chat" },
+            { text: "Ask for the Snapchat group chat", next: "ask_snapchat_group_chat" }
+        ]
+    },
+    ask_snapchat_group_chat: {
+        id: "ask_snapchat_group_chat",
+        title: "Ask for the Snapchat group chat",
+        text: "You ask for the Snapchat group chat. Your friend laughs and says Snapchat is usually used for casual, personal stories rather than company updates. She still shares the link if you want to join, but warns that the main work communications happen on Whatsapp.",
+        image: "images/ask_snapchat_group_chat.png",
+        choices: [
+            { text: "Ask for the Whatsapp group chat", next: "ask_whatsapp_group_chat" },
+            { text: "Join the Snapchat group anyway", next: "ask_whatsapp_group_chat" }
         ]
     },
     ask_teams_group_chat: {
