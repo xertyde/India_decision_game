@@ -26,7 +26,11 @@ const sceneProgress = {
     'accept_the_dish': 85,
     'ask_teams_group_chat': 90,
     'ask_snapchat_group_chat': 95,
-    'ask_whatsapp_group_chat': 100,
+    'ask_whatsapp_group_chat': 80,
+    'personal_questions': 85,
+    'chai_time': 90,
+    'leaving_time': 95,
+    'final_success': 100,
     'bad_end_1': 100,
     'bad_end_2': 100,
     'bad_end_3': 100,
@@ -34,7 +38,11 @@ const sceneProgress = {
     'bad_end_5': 100,
     'bad_end_6': 100,
     'bad_end_7': 100,
-    'bad_end_8': 100
+    'bad_end_8': 100,
+    'bad_end_9': 100,
+    'bad_end_10': 100,
+    'bad_end_11': 100,
+    'bad_end_12': 100
 };
 
 // Story scenes data
@@ -42,7 +50,7 @@ const scenes = {
     start: {
         id: "interview_morning",
         title: "The Interview Day",
-        text: "It's your first day in India. Your goal is to get an internship in a Call Center in Bangalore. You have an interview planned at 9am. You have just woken up and It's 8am, you have more or less 1 hour of public transport to get there.",
+        text: "It's your first day in India. Your goal is to get an internship in a Call Center in Bangalore. You have an interview planned at 9am. You have just woken up and it's 8am, you have more or less 1 hour of public transport to get there.",
         image: "images/start.jpg",
         choices: [
             { text: "You take public transport right away.", next: "public_transport_choice" },
@@ -66,14 +74,14 @@ const scenes = {
         text: "Your stomach is growling loudly, and you know you won't be able to focus on the interview if you're hungry. You decide to make a quick stop at a nearby street food avenue. The aroma of spices fills the air, but you need to be fast!",
         image: "images/street_food.jpg",
         choices: [
-            { text: "Quickly grab a samosa cooked by an indian's foot and fried with diesel", next: "feet_food" },
+            { text: "Quickly grab a samosa cooked by an Indian's foot and fried with diesel", next: "feet_food" },
             { text: "Decide to buy instant noodles and warm it up in the microwave", next: "instant_noodles" }
         ]
     },
     tuk_tuk: {
         id: "tuk_tuk",
         title: "Tuk-Tuk Adventure",
-        text: "You flag down a colorful tuk-tuk. The driver negotiates the price with enthusiasm. As you zip through Bangalore's busy streets, you realize this might be faster than expected, but also more unpredictable. You get in car accident and there was no seatbelt on board. You are dead.",
+        text: "You flag down a colorful tuk-tuk. The driver negotiates the price with enthusiasm. As you zip through Bangalore's busy streets, you realize this might be faster than expected, but also more unpredictable. You get in a car accident and there was no seatbelt on board. You are dead.",
         image: "images/tuk_tuk.png",
         choices: [
             { text: "Get buried in the mud", next: "bad_end_1" }
@@ -91,16 +99,16 @@ const scenes = {
     bus: {
         id: "bus",
         title: "Bus Journey",
-        text: "You hop on the local bus. It's crowded with commuters, but it's the most affordable option. The bus moves slowly through the morning rush, making several stops along the way. You get stolen your phone and your wallet by a pickpocket. You are broke.",
+        text: "You hop on the local bus. It's crowded with commuters, but it's the most affordable option. The bus moves slowly through the morning rush, making several stops along the way. A pickpocket steals your phone and your wallet. You are broke.",
         image: "images/bus.jpg",
         choices: [
-            { text: "Get back to your appartment", next: "bad_end_2" }
+            { text: "Get back to your apartment", next: "bad_end_2" }
         ]
     },
     feet_food: {
         id: "feet_food",
         title: "Cultural Experience",
-        text: "You quickly grab a samosa from a street vendor cooked with his feet and fried with diesel. It's horrible but you are hungry. Really bad idea, you get turista",
+        text: "You quickly grab a samosa from a street vendor cooked with his feet and fried with diesel. It's horrible but you are hungry. Really bad idea, you get turista.",
         image: "images/feet_food.jpg",
         choices: [
             { text: "Shit your pants", next: "bad_end_3" }
@@ -129,7 +137,7 @@ const scenes = {
     get_to_office_at_past_9am: {
         id: "get_to_office_at_past_9am",
         title: "It's past 9am and you arrive at the office.",
-        text: "Don't worry, you are not the only one late. In India, when you say 9am, it can actually mean 9:30am or 10am. You run by your interviewer, you approach him in order to greet him.",
+        text: "Don't worry, you are not the only one late. In India, when you say 9am, it can actually mean 9:30am or 10am. You run into your interviewer, you approach him in order to greet him.",
         image: "images/get_to_office_at_9am.jpeg",
         choices: [
             { text: "Bow at 90° angle", next: "bow_90_degrees" },
@@ -141,7 +149,7 @@ const scenes = {
     go_to_other_building: {
         id: "go_to_other_building",
         title: "Go to the other building",
-        text: "You go to the other building. It's actually a Bollywood studio. You sit and watch some scene from the next indian blockbuster movie. Twenty minutes later, you are called by your interviewer. You return to the previous building.",
+        text: "You go to the other building. It's actually a Bollywood studio. You sit and watch some scenes from the next Indian blockbuster movie. Twenty minutes later, you are called by your interviewer. You return to the previous building.",
         image: "images/go_to_other_building.jpg",
         choices: [
             { text: "Return to the previous building", next: "get_to_office_at_past_9am" }
@@ -150,17 +158,17 @@ const scenes = {
     conversation_stranger: {
         id: "conversation_stranger",
         title: "Conversation with a stranger",
-        text: "You start a conversation with a stranger in the office. Congratulations ! You got a new friend, his name is Aditya. You ask him where is the office you are looking for, and where is your interviewer desk. He takes your hand and leads you to th right place.",
+        text: "You start a conversation with a stranger in the office. Congratulations! You got a new friend, his name is Aditya. You ask him where the office you are looking for is, and where your interviewer's desk is. He takes your hand and leads you to the right place.",
         image: "images/conversation_stranger.jpg",
         choices: [
-            { text: "Make an homophobic joke", next: "homophobic_joke" },
+            { text: "Make a homophobic joke", next: "homophobic_joke" },
             { text: "Thank him", next: "get_to_office_at_past_9am" },
         ],
     },
     homophobic_joke: {
         id: "homophobic_joke",
         title: "Homophobic joke",
-        text: "You make an homophobic joke. Aditya is offended by your joke. He asks you to leave the office.",
+        text: "You make a homophobic joke. Aditya is offended by your joke. He asks you to leave the office.",
         image: "images/homophobic_joke.jpeg",
         choices: [
             { text: "Leave the office", next: "bad_end_5" }
@@ -169,7 +177,7 @@ const scenes = {
     bow_90_degrees: {
         id: "bow_90_degrees",
         title: "Bow at 90° angle",
-        text: "You bow at 90° angle. Your interviewer is disturbed by your racist behaviour. We are in India, not Japan.",
+        text: "You bow at a 90° angle. Your interviewer is disturbed by your racist behaviour. We are in India, not Japan.",
         image: "images/bow_90_degrees.jpeg",
         choices: [
             { text: "Apologize and greet him with a handshake", next: "greet_with_a_handshake" },
@@ -185,7 +193,7 @@ const scenes = {
         choices: [
             { text: "Correct him", next: "correct_him" },
             { text: "Laugh at him", next: "laugh_at_him" },
-            { text: "Ignore It", next: "ignore_it" }
+            { text: "Ignore it", next: "ignore_it" }
         ]
     },
     say_namaste: {
@@ -196,13 +204,13 @@ const scenes = {
         choices: [
             { text: "Correct him", next: "correct_him" },
             { text: "Laugh at him", next: "laugh_at_him" },
-            { text: "Ignore It", next: "ignore_it" }
+            { text: "Ignore it", next: "ignore_it" }
         ]
     },
     correct_him: {
         id: "correct_him",
         title: "Correct him",
-        text: "You correct him. He is the boss. I decides to end the interview right away.",
+        text: "You correct him. He is the boss. He decides to end the interview right away.",
         image: "images/correct_him.jpg",
         choices: [
             { text: "You are thrown out of the office", next: "bad_end_6" }
@@ -219,8 +227,8 @@ const scenes = {
     },
     ignore_it: {
         id: "ignore_it",
-        title: "Ignore It",
-        text: "You ignore it. Good idea, because he is the boss. He asks for your CV. A good CV in India must include some specification : Include personal details such as full name, phone number, email, and often city/state (postal address optional).\n\nAdd a short professional summary at the top highlighting skills and career goals.\n\nMention technical skills clearly, especially IT tools, software, or domain-specific expertise.\n\nDetail academic qualifications with percentages/GPAs, universities, and years of completion.\n\nList projects and internships, as they are highly valued, especially for fresh graduates.\n\nInclude certifications, online courses, and relevant training programs.\n\nAdd extracurricular activities or achievements if they strengthen the profile.\n\nKeep the format clean and structured, usually 1–2 pages depending on experience.",
+        title: "Ignore it",
+        text: "You ignore it. Good idea, because he is the boss. He asks for your CV. A good CV in India must include some specifications: Include personal details such as full name, phone number, email, and often city/state (postal address optional).\n\nAdd a short professional summary at the top highlighting skills and career goals.\n\nMention technical skills clearly, especially IT tools, software, or domain-specific expertise.\n\nDetail academic qualifications with percentages/GPAs, universities, and years of completion.\n\nList projects and internships, as they are highly valued, especially for fresh graduates.\n\nInclude certifications, online courses, and relevant training programs.\n\nAdd extracurricular activities or achievements if they strengthen the profile.\n\nKeep the format clean and structured, usually 1–2 pages depending on experience.",
         image: "images/ignore_it.jpeg",
         choices: [
             { text: "CV 1", next: "bad_end_7", pdf: "images/CV_1.pdf" },
@@ -231,7 +239,7 @@ const scenes = {
     hired: {
         id: "hired",
         title: "You are hired",
-        text: "Congratulations ! You are hired. You start your internship right now. A kind coworker offers you a traditional dish that se cooked: chicken curry, but you are vegan.",
+        text: "Congratulations! You are hired. You start your internship right now. A kind coworker offers you a traditional dish that she cooked: chicken curry, but you are vegan.",
         image: "images/curry.jpg",
         choices: [
             { text: "Refuse the dish", next: "bad_end_8" },
@@ -241,7 +249,7 @@ const scenes = {
     accept_the_dish: {
         id: "accept_the_dish",
         title: "Accept the dish",
-        text: "You accept the dish. It's delicious. You have a new friend ! You ask her the link for the company's group chat.",
+        text: "You accept the dish. It's delicious. You have a new friend! You ask her the link for the company's group chat.",
         image: "images/accept_the_dish.jpeg",
         choices: [
             { text: "Ask for the Teams group chat", next: "ask_teams_group_chat" },
@@ -271,7 +279,49 @@ const scenes = {
     ask_whatsapp_group_chat: {
         id: "ask_whatsapp_group_chat",
         title: "Ask for the Whatsapp group chat",
-        text: "You ask for the Whatsapp group chat. You join the group chat. You start to work. Congratulations ! You got your internship without being fired!",
+        text: "You ask for the Whatsapp group chat. You join the group chat. Perfect! Now you're officially part of the team. A few hours into your first day, your colleague Priya comes to your desk with a warm smile.",
+        image: "images/hired.jpeg",
+        choices: [
+            { text: "Continue working", next: "personal_questions" }
+        ]
+    },
+    personal_questions: {
+        id: "personal_questions",
+        title: "Getting to know you... really well",
+        text: "Priya starts asking you questions: 'So, are you married? How much is your salary in France? Why aren't you married yet? Do your parents approve of you working abroad? How old are you exactly?' In India, these personal questions are a sign of genuine interest and care, not an invasion of privacy like in the West.",
+        image: "images/conversation_stranger.jpg",
+        choices: [
+            { text: "Tell her it's none of her business and ask her to respect your privacy", next: "bad_end_10" },
+            { text: "Answer politely and ask her the same questions back", next: "chai_time" },
+            { text: "Report her to HR for harassment", next: "bad_end_11" }
+        ]
+    },
+    chai_time: {
+        id: "chai_time",
+        title: "Chai Time!",
+        text: "It's 4pm and suddenly everyone stops working. A chai wallah appears with a tray of steaming cups of masala chai. Your colleague offers you one. In India, chai breaks are sacred team bonding moments. Refusing is like saying you don't want to be part of the team.",
+        image: "images/curry.jpg",
+        choices: [
+            { text: "Say 'No thanks, I only drink organic matcha from Whole Foods'", next: "bad_end_12" },
+            { text: "Accept the chai and enjoy the break with your colleagues", next: "leaving_time" },
+            { text: "Accept but immediately go back to your computer to keep working", next: "bad_end_10" }
+        ]
+    },
+    leaving_time: {
+        id: "leaving_time",
+        title: "End of the day?",
+        text: "It's 6pm, your official end time according to your contract. You notice nobody is leaving. Some colleagues are still working, others are chatting. Your manager is still at his desk. In Western culture, leaving on time is normal. In India, leaving before your boss might be seen as lack of dedication.",
+        image: "images/get_to_office_at_9am.jpeg",
+        choices: [
+            { text: "Pack your bag loudly and announce 'Well, I'm done for today! Work-life balance, am I right?'", next: "bad_end_9" },
+            { text: "Stay a bit longer, chat with colleagues, and leave when others start leaving", next: "final_success" },
+            { text: "Send an email to HR complaining about unpaid overtime", next: "bad_end_11" }
+        ]
+    },
+    final_success: {
+        id: "final_success",
+        title: "You survived your first day!",
+        text: "Congratulations! You successfully navigated the cultural differences of an Indian workplace. You learned that personal questions mean people care, chai breaks are sacred, and flexibility with time goes both ways. Your colleagues love you, your boss is impressed, and you've made friends for life. Welcome to India!",
         image: "images/hired.jpeg",
         choices: [],
         ending: "good"
@@ -288,7 +338,7 @@ const scenes = {
     bad_end_1: {
         id: "bad_end_1",
         title: "You are dead",
-        text: "You are dead. You are buried in the mud. You wont obviously attend to your interview. You are not hired.",
+        text: "You are dead. You are buried in the mud. You won't obviously attend your interview. You are not hired.",
         image: "images/bad_end_1.jpeg",
         choices: [],
         ending: "bad"
@@ -296,7 +346,7 @@ const scenes = {
     bad_end_2: {
         id: "bad_end_2",
         title: "You are broke",
-        text: "You are broke. You wont obviously attend to your interview. You are not hired.",
+        text: "You are broke. You won't obviously attend your interview. You are not hired.",
         image: "images/bad_end_2.jpeg",
         choices: [],
         ending: "bad"
@@ -304,7 +354,7 @@ const scenes = {
     bad_end_3: {
         id: "bad_end_3",
         title: "You have turista",
-        text: "You have turista. You wont obviously attend to your interview. You are not hired.",
+        text: "You have turista. You won't obviously attend your interview. You are not hired.",
         image: "images/bad_end_3.gif",
         choices: [],
         ending: "bad"
@@ -320,7 +370,7 @@ const scenes = {
     bad_end_5: {
         id: "bad_end_5",
         title: "You are thrown out of the office because of your homophobic joke",
-        text: "In India, Indian often take there friends' hand. You are not hired",
+        text: "In India, Indians often take their friends' hands. You are not hired.",
         image: "images/bad_end_5.jpeg",
         choices: [],
         ending: "bad"
@@ -328,7 +378,7 @@ const scenes = {
     bad_end_6: {
         id: "bad_end_6",
         title: "You are thrown out of the office because you mention his fault",
-        text: "In indian companies, the boss is always right. You are not hired.",
+        text: "In Indian companies, the boss is always right. You are not hired.",
         image: "images/bad_end_6.jpg",
         choices: [],
         ending: "bad"
@@ -336,7 +386,7 @@ const scenes = {
     bad_end_7: {
         id: "bad_end_7",
         title: "You are not hired",
-        text: "You are not hired because your CV isn't India friendly.",
+        text: "You are not hired because your CV isn't India-friendly.",
         image: "images/bad_end_7.jpeg",
         choices: [],
         ending: "bad"
@@ -348,13 +398,36 @@ const scenes = {
         image: "images/bad_end_8.jpeg",
         choices: [],
         ending: "bad"
-    }
-
+    },
     bad_end_9: {
         id: "bad_end_9",
-        title: "You are fired",
-        text: "Maybe you thougt you were here to make drinking friends. Think again buddy. You are fired.",
-        image: "images/bad_end_8.jpeg",
+        title: "Work-Life Balance Champion",
+        text: "You packed your bag at exactly 6:00:00 PM like a Swiss clock. Your manager watched you leave with the disappointment of a thousand Indian mothers. The next day, you found out you've been assigned to the 'special projects' team. The project? Counting paperclips in the basement. Forever. You are not fired, but you wish you were.",
+        image: "images/bad_end_2.jpeg",
+        choices: [],
+        ending: "bad"
+    },
+    bad_end_10: {
+        id: "bad_end_10",
+        title: "The Cold Westerner",
+        text: "You treated your colleagues' warmth like a GDPR violation. In India, being reserved is interpreted as being arrogant or unfriendly. The office WhatsApp group is now suspiciously quiet when you message. Lunch invitations mysteriously stopped. You eat alone while everyone else shares tiffin boxes and laughs. You technically still have a job, but you've become the office ghost.",
+        image: "images/bad_end_2.jpeg",
+        choices: [],
+        ending: "bad"
+    },
+    bad_end_11: {
+        id: "bad_end_11",
+        title: "HR's Favorite Person",
+        text: "You reported everything to HR: the personal questions, the chai breaks, the flexible hours. HR forwarded your complaints to your manager. Your manager forwarded them to the entire office. You are now known as 'HR wala' and people scatter like pigeons when you approach. Your LinkedIn is about to get very active because you'll need it.",
+        image: "images/bad_end_2.jpeg",
+        choices: [],
+        ending: "bad"
+    },
+    bad_end_12: {
+        id: "bad_end_12",
+        title: "The Chai Refuser",
+        text: "You refused chai. CHAI. The sacred elixir that binds Indian offices together. The chai wallah looked at you like you insulted his ancestors. Your colleagues gasped. Someone dropped their samosa. The office fell silent. Legend says they still talk about 'the foreigner who refused chai' during every chai break. Your career in India ended before your cup of organic matcha could brew.",
+        image: "images/bad_end_2.jpeg",
         choices: [],
         ending: "bad"
     }
