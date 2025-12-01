@@ -491,6 +491,22 @@ function displayScene(sceneId) {
     // Update text
     document.getElementById('scene-text').textContent = scene.text;
     
+    // Add/remove PDF scene class for special mobile styling
+    const gameContainer = document.querySelector('.game-container');
+    const textArea = document.querySelector('.text-area');
+    const imageArea = document.querySelector('.image-area');
+    if (scene.showPdfs) {
+        gameContainer.classList.add('pdf-scene');
+        textArea.classList.add('scrollable-text');
+        imageArea.classList.add('hidden-on-pdf');
+        // Reset scroll position to top for the text area
+        textArea.scrollTop = 0;
+    } else {
+        gameContainer.classList.remove('pdf-scene');
+        textArea.classList.remove('scrollable-text');
+        imageArea.classList.remove('hidden-on-pdf');
+    }
+    
     // Update image
     const imageElement = document.getElementById('scene-image');
     if (scene.image && scene.image !== "") {
