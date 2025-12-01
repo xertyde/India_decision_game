@@ -264,7 +264,7 @@ const scenes = {
         image: "images/ask_snapchat_group_chat.png",
         choices: [
             { text: "Ask for the Whatsapp group chat", next: "ask_whatsapp_group_chat" },
-            { text: "Join the Snapchat group anyway", next: "ask_whatsapp_group_chat" }
+            { text: "Join the Snapchat group anyway", next: "bad_end_13" }
         ]
     },
     ask_teams_group_chat: {
@@ -428,6 +428,15 @@ const scenes = {
         title: "The Chai Refuser",
         text: "You refused chai. CHAI. The sacred elixir that binds Indian offices together. The chai wallah looked at you like you insulted his ancestors. Your colleagues gasped. Someone dropped their samosa. The office fell silent. Legend says they still talk about 'the foreigner who refused chai' during every chai break. Your career in India ended before your cup of organic matcha could brew.",
         image: "images/bad_end_2.jpeg",
+        choices: [],
+        ending: "bad"
+    }
+,
+    bad_end_13: {
+        id: "bad_end_13",
+        title: "The Snapchat Enthusiast",
+        text: "You joined the Snapchat group chat. Unfortunately, it was filled with memes and personal stories, not work-related content. Your manager noticed your Snapchat activity during office hours and questioned your professionalism. You are not fired, but your reputation took a hit. You think you're cool ? Think again buddy.",
+        image: "images/bad_end_13.jpeg",
         choices: [],
         ending: "bad"
     }
