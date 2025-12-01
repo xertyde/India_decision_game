@@ -349,6 +349,15 @@ const scenes = {
         choices: [],
         ending: "bad"
     }
+
+    bad_end_9: {
+        id: "bad_end_9",
+        title: "You are fired",
+        text: "Maybe you thougt you were here to make drinking friends. Think again buddy. You are fired.",
+        image: "images/bad_end_8.jpeg",
+        choices: [],
+        ending: "bad"
+    }
 };
 
 // Update progress bar
