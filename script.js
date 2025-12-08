@@ -435,7 +435,7 @@ const scenes = {
     bad_end_13: {
         id: "bad_end_13",
         title: "The Snapchat Enthusiast",
-        text: "You joined the Snapchat group chat. Unfortunately, it was filled with memes and personal stories, not work-related content. Your manager noticed your Snapchat activity during office hours and questioned your professionalism. You are not fired, but your reputation took a hit. You think you're cool ? Think again buddy.",
+        text: "You joined the Snapchat group chat. Unfortunately, it was filled with memes and personal stories, not work-related content. Your manager noticed your Snapchat activity during office hours and questioned your professionalism. You are not hired and your reputation took a hit. You think you're cool ? Think again buddy.",
         image: "images/bad_end_13.jpeg",
         choices: [],
         ending: "bad"
