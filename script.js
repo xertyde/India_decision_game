@@ -8,6 +8,7 @@ const sceneProgress = {
     'street_food_detour': 15,
     'tuk_tuk': 25,
     'cab': 25,
+    'cow_crossing': 35,
     'bus': 25,
     'feet_food': 25,
     'instant_noodles': 25,
@@ -42,7 +43,8 @@ const sceneProgress = {
     'bad_end_9': 100,
     'bad_end_10': 100,
     'bad_end_11': 100,
-    'bad_end_12': 100
+    'bad_end_12': 100,
+    'bad_end_14': 100
 };
 
 // Story scenes data
@@ -93,7 +95,17 @@ const scenes = {
         text: "You book a cab through an app. The driver is professional and the car is air-conditioned. The ride is comfortable, but the traffic in Bangalore is notorious. You watch the clock nervously.",
         image: "images/cab.jpg",
         choices: [
-            { text: "Continue to the interview", next: "get_to_office_at_9am" }
+            { text: "Continue to the interview", next: "cow_crossing" }
+        ]
+    },
+    cow_crossing: {
+        id: "cow_crossing",
+        title: "Sacred Obstacle",
+        text: "Suddenly, the cab stops. A cow is peacefully standing in the middle of the road, blocking all traffic. In India, cows are considered sacred animals and are protected by law. Your driver turns to you and shrugs. The cow doesn't seem to be in any hurry to move.",
+        image: "images/cow.webp",
+        choices: [
+            { text: "Tell the driver to honk and drive around it, or even push it gently with the car", next: "bad_end_14" },
+            { text: "Wait patiently for the cow to cross - it's only 10 minutes", next: "get_to_office_at_9am" }
         ]
     },
     bus: {
@@ -437,6 +449,14 @@ const scenes = {
         title: "The Snapchat Enthusiast",
         text: "You joined the Snapchat group chat. Unfortunately, it was filled with memes and personal stories, not work-related content. Your manager noticed your Snapchat activity during office hours and questioned your professionalism. You are not hired and your reputation took a hit. You think you're cool ? Think again buddy.",
         image: "images/bad_end_13.jpeg",
+        choices: [],
+        ending: "bad"
+    },
+    bad_end_14: {
+        id: "bad_end_14",
+        title: "The Cow Offender",
+        text: "You insisted the driver move the cow. Big mistake. In India, cows are sacred animals in Hinduism and harming them is not only culturally offensive but also illegal in many states. A crowd quickly gathered, furious at your disrespect. The police arrived and you spent the rest of the day explaining yourself at the station. Your interview? Completely missed. Your reputation in India? Destroyed before it even began.",
+        image: "images/police.jpg",
         choices: [],
         ending: "bad"
     }
