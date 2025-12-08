@@ -1,0 +1,98 @@
+INDIA DECISION GAME - ORAL PRESENTATION
+=========================================
+A journey through Indian culture, one choice at a time
+
+Total duration: ~10 minutes
+Team: Thomas (Code), Rémi (Debug), Loris (Design), Antoine (Scenario)
+
+==========================================================================
+PART 1 - ANTOINE (Scenario Writer) - ~2.5 minutes
+==========================================================================
+
+Hey everyone! I'm Antoine, and I was in charge of writing the story and all the scenarios for our game. So basically, my job was to figure out what happens when you make each choice, and honestly, it was super fun but also a big learning experience.
+
+The whole concept of the game is that you're a French student going to Bangalore for a job interview at a call center. Sounds simple, right? But here's the thing - navigating through an Indian workday is way more complex than I thought when I started researching.
+
+Let me tell you about the cultural stuff I discovered. First off, there's this thing called "Indian Standard Time" - and no, I'm not being mean, it's actually a real thing! When someone says "let's meet at 9am," it can actually mean 9:30 or even 10am. Time is more flexible there, and that's totally normal. We put this in the game because being early and stressing out about punctuality is actually more of a Western thing.
+
+Then there's the greeting situation. I had to research how people greet each other in professional settings. So we give players four options: bow at 90 degrees, handshake, say namaste, or give a hug. The bow is wrong because that's Japanese culture, not Indian - and honestly, confusing Asian cultures is pretty offensive. The hug is way too intimate for a first meeting with your boss. Both handshake and namaste work well, which I thought was interesting because it shows how India balances traditional and modern customs.
+
+One scenario that I really liked writing was about men holding hands. In the game, a guy named Aditya helps you find your way and takes your hand to lead you. If you make a homophobic joke about it, you get kicked out. That's because in India, men holding hands is totally normal and just means friendship - there's nothing romantic about it. It's actually really wholesome when you think about it.
+
+I also wrote the entire second half of the game about workplace culture after you get hired. The chai break scene was my favorite - refusing chai in an Indian office is like saying you don't want to be part of the team. It's a sacred bonding ritual! And leaving work at exactly 6pm before your boss? That can be seen as lacking dedication. These little things can make or break your relationships with colleagues.
+
+We used AI to help brainstorm some scenarios and research cultural facts, but the storytelling and humor? That was all human creativity. AI gave us information, but we made it fun.
+
+==========================================================================
+PART 2 - THOMAS (Code Writer) - ~2.5 minutes
+==========================================================================
+
+Alright, so I'm Thomas and I handled all the coding for this project. When Antoine gave me his scenarios, my job was to bring them to life in a working interactive game.
+
+The tech stack is actually pretty straightforward - just HTML, CSS, and vanilla JavaScript. No fancy frameworks, no React or Vue, just pure JavaScript. I wanted to keep it simple and accessible, so anyone can run it just by opening the HTML file in a browser.
+
+Let me walk you through how the code works. The heart of the game is this big object called "scenes" that contains every single moment of the story. Each scene has an ID, a title, some text, an image, and an array of choices. Each choice then leads to another scene. It's basically a big tree structure, you know? Like a choose-your-own-adventure book but in code.
+
+One thing I'm pretty proud of is the progress bar system. I created a mapping that tracks how far you are in the game - like the start is 0%, getting to the office is around 45%, getting hired is 75%, and reaching the good ending is 100%. This gives players a sense of progression and makes them want to complete the game.
+
+The CV selection scene was probably the trickiest to code. We actually embedded real PDF files that players can view side by side and choose from. One CV is "India-friendly" with personal details, percentages, and proper formatting, while the other is more Western-style. This teaches players that Indian CVs are different - they often include photos, marital status, exact percentages from school, and other personal details that would be weird on a French or American resume.
+
+I also implemented all the bad endings - and there are like 13 of them! Each one explains what cultural mistake you made. Getting eaten by traffic because you took a tuk-tuk without seatbelts, getting robbed on the bus, offending your boss by correcting him, refusing chai... the game really punishes you for not understanding Indian culture, which is kind of the point, right?
+
+AI helped me a lot with debugging syntax errors and optimizing some functions. Like, when I wasn't sure how to structure the PDF viewer or make the progress bar animate smoothly, I could ask for suggestions. But the overall architecture and logic? That came from understanding the game flow that Antoine designed.
+
+Honestly, what I learned is that even a "simple" game requires thinking about user experience, edge cases, and making sure the code is clean enough for Rémi to debug when things go wrong!
+
+==========================================================================
+PART 3 - RÉMI (Debugger) - ~2.5 minutes
+==========================================================================
+
+Hey, I'm Rémi, and I was the debugger on this project. You might think debugging is boring, but trust me, it was actually pretty crucial to making this game work properly.
+
+So what does a debugger actually do? Basically, after Thomas wrote the code, I went through everything to find and fix problems. Things like scenes that didn't link properly, images that wouldn't load, buttons that didn't respond, progress bar calculations that were off... all that stuff.
+
+One of the biggest issues I found was in the story flow. Some choices were pointing to scene IDs that didn't exist, which would completely break the game. Like, imagine clicking "Continue to the interview" and getting a blank screen with an error in the console. Not a great user experience! I had to trace through every single path in the game to make sure they all worked.
+
+I also spent a lot of time testing on different devices. The game needed to work on phones, tablets, and desktops. There were some weird CSS issues on mobile where the PDF viewer was way too small or the buttons were overlapping. Loris and I worked together a lot on these responsive design issues.
+
+Testing all the bad endings was actually pretty fun. I had to intentionally make all the wrong choices to see if each ending worked correctly. Take the tuk-tuk, get food poisoning, insult your boss, refuse chai, leave at exactly 6pm... I basically speedran every way to fail in Indian culture!
+
+What I found interesting from a cultural perspective is how the game teaches through failure. Every bad ending gives you a little explanation about why that was wrong. Like when you refuse the curry from your coworker, the game tells you it's really impolite to refuse gifts in India. Or when you ask about the Snapchat group chat instead of WhatsApp, you learn that WhatsApp is THE communication tool in India - everyone uses it for everything, even work stuff.
+
+AI was useful for checking code logic and suggesting fixes when something wasn't working. Sometimes the bug was obvious, sometimes it was a tiny typo that AI could spot faster than me. But understanding WHY something broke and how to properly fix it without creating new problems - that's the human skill that matters.
+
+My biggest takeaway from this project is that testing is about empathy. You need to think like someone who's never seen this game before and might click anything. And in this case, you also need to think like someone who knows nothing about Indian culture - which was kind of the point of making the game in the first place!
+
+==========================================================================
+PART 4 - LORIS (Designer) - ~2.5 minutes
+==========================================================================
+
+Hi everyone, I'm Loris, and I was responsible for all the visual design and user experience of the game.
+
+When we started, I had a clear vision: the game should feel modern, clean, and engaging. I went with a gradient purple theme because it feels professional but also a bit playful - we're teaching culture through a game, after all, not writing a textbook.
+
+The color palette uses these purple and violet tones as primary colors, with green for success messages and red for bad endings. I also added support for dark mode because, let's be honest, everyone browses at night sometimes. The progress bar at the top with its glowing effect and milestones was something I'm really proud of - it makes you feel like you're actually going somewhere in the story.
+
+For the images, we had to find pictures that represented each scene. Street food stalls, tuk-tuks, the Bangalore office environment, chai being served... each image needed to set the mood and help players visualize what's happening. Some images came from stock photo sites, some were generated with AI tools to get exactly what we needed.
+
+Mobile responsiveness was a huge challenge. We wanted people to play this game on their phones during commute or whatever, so I had to make sure everything scaled properly. The PDF scene especially - showing two CVs side by side on a phone screen is tricky! I ended up making them horizontally scrollable on mobile so you can swipe between them.
+
+What I learned about Indian culture through design is actually interesting. When I was looking for reference images, I noticed how colorful and vibrant India is. The tuk-tuks are painted in bright colors, the street food stalls are full of oranges and yellows from the spices, traditional clothing is super colorful... It's a very visually rich culture, and I tried to capture some of that energy in the UI.
+
+Working with AI on design was helpful for generating placeholder images and getting inspiration. But the final aesthetic decisions - what feels right, what creates the right mood, what's readable and accessible - that's all human judgment. AI can give you options, but it can't tell you what's beautiful or what emotion a color evokes.
+
+The best part of being the designer was seeing everything come together. Antoine's story, Thomas's code, Rémi's testing, and my visuals all combining into something that actually teaches you about India while being fun to play. That's what good design does - it makes learning feel effortless.
+
+==========================================================================
+CONCLUSION (Any team member) - ~30 seconds
+==========================================================================
+
+So that's our India Decision Game! To wrap up: we learned that Indian culture values relationships over rigid schedules, that hospitality and chai breaks are sacred, that hierarchies are respected differently than in the West, and that communication happens through WhatsApp, not Teams or email.
+
+Our team combined AI tools for research, image generation, and code assistance with human creativity for storytelling, design decisions, and quality testing. None of us could have made this game alone, but together we created something that actually teaches you how to survive - and thrive - in an Indian workplace.
+
+Thanks for listening, and we hope you enjoy playing the game!
+
+==========================================================================
+END OF PRESENTATION
+==========================================================================
